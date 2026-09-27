@@ -331,7 +331,7 @@
   <section class="page">
     <div class="page-inner reveal">
       <h2>RSVP</h2>
-      <p class="sub">Kindly reply by December 1, 2026</p>
+      <p class="sub">Kindly reply by December 12, 2026</p>
       <p class="body">Everything else lives on our website: getting to the island, where to stay, golf carts and things to know.</p>
       <div class="actions">
         <a class="btn primary" href="/#rsvp">Respond</a>
@@ -358,6 +358,10 @@
     setTimeout(() => { window.scrollTo(0, 0); body.classList.add('open'); }, 3200);
   }
   envelope.addEventListener('click', () => openInvite(reduce), {once:true});
+  // Guests arriving from the email (?from=email) already tapped once, so open it for them
+  if (new URLSearchParams(location.search).get('from') === 'email') {
+    setTimeout(() => { if (!envelope.disabled) openInvite(reduce); }, 1500);
+  }
   if (location.hash === '#open') openInvite(true); // handy while editing: skips the envelope
 
   const io = new IntersectionObserver(entries => {
