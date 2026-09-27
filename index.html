@@ -90,6 +90,13 @@
     font-family:var(--sans);
   }
   .rsvp-btn:hover{background:var(--ink);color:#fff}
+  .invite-link{
+    font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink);padding:6px 2px;border-bottom:1px solid transparent;white-space:nowrap;
+    transition:border-color .2s ease;
+  }
+  .invite-link:hover{border-bottom-color:var(--ink)}
+  nav.primary a.nav-link.nav-invite{display:none}
 
   /* NAV ROW */
   .nav-wrap{
@@ -422,6 +429,7 @@
     .nav-wrap{padding:0 12px 12px}
     .login{display:none}
     .rsvp-btn{padding:10px 16px;font-size:11px;letter-spacing:.12em}
+    .invite-link{font-size:11px;letter-spacing:.12em}
     .home-photos,.wp-photos{grid-template-columns:1fr}
     .home-photos .photo-slot,.wp-photos .photo-slot{aspect-ratio:3/2}
     .form-row.two{grid-template-columns:1fr}
@@ -433,6 +441,8 @@
     .registry-block{padding:60px 20px}
   }
   @media (max-width: 560px){
+    .invite-link{display:none}
+    nav.primary a.nav-link.nav-invite{display:block}
     :root{--header-h:80px;--pad-x:16px}
     nav.primary{display:none}
     nav.primary.is-open{
@@ -513,6 +523,7 @@
       <button class="menu-btn" id="menuBtn" aria-label="Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
       </button>
+<a href="/invitation/" class="invite-link">Invitation</a>
 <a href="#rsvp" class="rsvp-btn" data-route="rsvp">RSVP</a>
     </div>
   </div>
@@ -539,6 +550,7 @@
       </div>
       <a class="nav-link" href="#weekend-plans" data-route="weekend-plans">Weekend Plans</a>
       <a class="nav-link" href="#registry" data-route="registry">Registry</a>
+      <a class="nav-link nav-invite" href="/invitation/">Invitation</a>
       <a class="nav-link" href="#rsvp" data-route="rsvp">RSVP</a>
     </nav>
   </div>
